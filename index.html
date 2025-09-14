@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiRed - Perfil SPA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <!-- logo controlado por CSS -->
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Logo MiRed" class="logo-img">
+      <div class="app-name">MiRed <span>Perfil - SPA</span></div>
+    </div>
+
+    <input class="search" type="search" placeholder="Buscar en MiRed... (ej. amigos, fotos, publicaciones)">
+
+    <div class="icons">
+      <button aria-label="notificaciones">🔔</button>
+      <button aria-label="configuración">⚙</button>
+      <button aria-label="ayuda">❓</button>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL (centrado con ancho máximo) -->
+  <div class="container">
+    <!-- COLUMNA IZQUIERDA: tarjeta perfil -->
+    <aside class="profile-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de perfil" class="profile-photo">
+      <h2>Alex Angulo</h2>
+      <p class="subtitle">Estudiante · Apasionado por el desarrollo web</p>
+
+      <div class="stats">
+        <div><strong>324</strong><span>Amigos</span></div>
+        <div><strong>89</strong><span>Fotos</span></div>
+        <div><strong>56</strong><span>Boxes</span></div>
+      </div>
+
+      <button class="btn-edit">Editar perfil</button>
+    </aside>
+
+    <!-- COLUMNA PRINCIPAL -->
+    <main class="main">
+      <nav class="tabs" role="tablist" aria-label="Secciones">
+        <button class="tab active" data-section="muro">Muro</button>
+        <button class="tab" data-section="info">Info</button>
+        <button class="tab" data-section="photos">Photos</button>
+        <button class="tab" data-section="boxes">Boxes</button>
+      </nav>
+
+      <section id="content" class="content" role="region" aria-live="polite">
+        <h3>Bienvenido👋</h3>
+        <p>Aquí se mostrarán tus publicaciones más recientes.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    .
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

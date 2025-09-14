@@ -1,0 +1,156 @@
+/* Reset y base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f0f2f5;
+  color: #1c1e21;
+  font-size: 16px;      /* evita texto diminuto */
+  line-height: 1.45;
+}
+
+/* Imágenes responsivas por defecto */
+img { max-width: 100%; height: auto; display: block; }
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: #fff;               /* estilo como en tu captura */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-left { display:flex; align-items:center; gap:10px; flex: 0 0 auto; }
+
+/* LOGO - tamaño controlado para que nunca sea gigante */
+.logo-img {
+  width: 36px;           /* tamaño fijo acorde a mock */
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Nombre pequeño al lado del logo */
+.app-name { font-weight: 700; font-size: 1rem; }
+.app-name span { display:block; font-size: .78rem; color:#6b6f76; font-weight:500; }
+
+/* Búsqueda - ocupa el espacio central y se adapta */
+.search {
+  flex: 1 1 480px;     /* puede crecer y reducirse */
+  min-width: 200px;
+  max-width: 700px;
+  padding: 9px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  outline: none;
+}
+
+/* Iconos a la derecha */
+.icons { display:flex; gap:8px; align-items:center; }
+.icons button {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f2f5;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* CONTENEDOR CENTRAL - centrado en la pantalla */
+.container {
+  max-width: 1100px;         /* limita ancho para que no se extienda igual que Facebook */
+  margin: 20px auto;         /* centra horizontalmente */
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 300px 1fr;  /* columna perfil + contenido */
+  gap: 20px;
+  align-items: start;
+}
+
+/* TARJETA DE PERFIL (columna izquierda) */
+.profile-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  object-fit: cover;
+}
+
+.profile-card h2 { margin-bottom: 6px; font-size: 1.1rem; }
+.profile-card .subtitle { color: #6b6f76; font-size: .9rem; margin-bottom: 12px; }
+
+.stats { display:flex; justify-content:space-around; gap:10px; margin: 14px 0; }
+.stats div { font-size: .95rem; text-align:center; color:#333; }
+.stats span { display:block; font-size: .82rem; color:#6b6f76; margin-top:4px; }
+
+.btn-edit {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background:#1877f2;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+.btn-edit:hover { background:#145db2; }
+
+/* COLUMNA PRINCIPAL (main) */
+.main {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  min-width: 0; /* importante para que la columna pueda encogerse en grid */
+}
+
+/* TABS */
+.tabs { display:flex; gap:8px; margin-bottom: 14px; flex-wrap:wrap; }
+.tab {
+  background:#f0f2f5;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor:pointer;
+  font-weight:700;
+}
+.tab.active { background:#1877f2; color:#fff; }
+
+/* CONTENIDO: centramos la caja de contenido dentro del main para parecerse al mock */
+.content {
+  max-width: 760px;    /* ancho de lectura */
+  margin: 0 auto;      /* centra el contenido dentro del main */
+  font-size: 1rem;
+  color: #222;
+  min-width: 0;        /* evitar overflow en flex/grid */
+}
+
+/* GRID DE FOTOS (si se usa) */
+.photos-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding: 18px 10px;
+  color:#6b6f76;
+  font-size: .9rem;
+  margin-top: 18px;
+}
