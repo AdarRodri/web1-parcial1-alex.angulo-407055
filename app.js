@@ -1,16 +1,15 @@
-// SPA simple: cambia contenido según pestaña
+
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".tab");
   const content = document.getElementById("content");
 
-  // función para generar fotos random
   function getRandomPhotos(count = 6) {
     let photosHTML = "";
     for (let i = 0; i < count; i++) {
-      // generamos un ancho/alto random entre 250 y 350
+      
       const w = 250 + Math.floor(Math.random() * 100);
       const h = 250 + Math.floor(Math.random() * 100);
-      // usamos un número aleatorio para evitar cache
+      
       const seed = Math.floor(Math.random() * 1000);
       photosHTML += `<img src="https://picsum.photos/${w}/${h}?random=${seed}" alt="foto random">`;
     }
@@ -33,24 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
       <p><strong>Ubicación:</strong> Cali, Colombia</p>
       <p><strong>Estudios:</strong> Inigenieria y Desarrollo Web</p>
     `,
-    photos: "", // se generará dinámicamente
+    photos: "", 
     boxes: `
       <h3>Boxes</h3>
       <p>Sección de cajas y proyectos guardados.</p>
     `
   };
 
-  // Función para activar una pestaña y mostrar su sección
+  
   function activateSection(name, clickedTab = null) {
     tabs.forEach(t => t.classList.toggle("active", t.dataset.section === name));
     if (name === "photos") {
-      content.innerHTML = getRandomPhotos(); // genera nuevas fotos cada vez
+      content.innerHTML = getRandomPhotos(); 
     } else {
       content.innerHTML = sections[name] || sections["muro"];
     }
   }
 
-  // eventos en pestañas
+  
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
       const s = tab.dataset.section;
@@ -58,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // inicial
+  
   activateSection("muro");
 });
+
